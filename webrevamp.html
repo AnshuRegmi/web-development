@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Web Dev Class</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f0f0f0 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            animation: bgFade 2s;
+        }
+        @keyframes bgFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .box {
+            background: #fff;
+            border: none;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            border-radius: 18px;
+            padding: 40px 32px 32px 56px;
+            max-width: 480px;
+            margin: 60px auto 0 auto;
+            position: relative;
+            transition: box-shadow 0.3s, transform 0.3s;
+            animation: boxPop 1s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes boxPop {
+            0% { transform: scale(0.8) translateY(40px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .box:hover {
+            box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.25);
+            transform: translateY(-8px) scale(1.03);
+        }
+        .big-quote {
+            font-size: 90px;
+            position: absolute;
+            left: 18px;
+            top: 10px;
+            filter: drop-shadow(0 2px 8px rgba(31,38,135,0.10));
+            animation: quoteSpin 2s infinite alternate ease-in-out;
+        }
+        @keyframes quoteSpin {
+            0% { transform: rotate(-5deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.08);}
+        }
+        .quote {
+            font-size: 22px;
+            line-height: 1.7;
+            color: #222;
+            font-weight: 400;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeInUp 1.2s 0.5s forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .author {
+            margin-top: 18px;
+            font-weight: 500;
+            color: #080808;
+            font-size: 17px;
+            letter-spacing: 0.5px;
+            text-align: right;
+            opacity: 0;
+            animation: fadeInUp 1.2s 0.8s forwards;
+        }
+        .social-icon {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 40px;
+            padding: 0;
+            list-style: none;
+            opacity: 0;
+            animation: fadeInUp 1.2s 1.2s forwards;
+        }
+        .social-icon li {
+            display: inline-block;
+        }
+        .social-icon a {
+            display: inline-block;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(31,38,135,0.10);
+            padding: 12px;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .social-icon a::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            background: #e0e7ff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+            z-index: 0;
+        }
+        .social-icon a:hover::before {
+            width: 120%; height: 120%;
+        }
+        .social-icon a:hover {
+            transform: translateY(-4px) scale(1.12) rotate(-6deg);
+            box-shadow: 0 6px 18px rgba(31,38,135,0.18);
+            background: #e0e7ff;
+        }
+        .social-icon img {
+            width: 32px;
+            height: 32px;
+            display: block;
+            position: relative;
+            z-index: 1;
+            filter: grayscale(0.3) brightness(0.9);
+            transition: filter 0.2s;
+        }
+        .social-icon a:hover img {
+            filter: none;
+        }
+        /* Floating animated shapes */
+        .shape {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.18;
+            pointer-events: none;
+            animation: floatShape 8s infinite alternate ease-in-out;
+        }
+        .shape1 {
+            width: 80px; height: 80px; left: 5vw; top: 10vh;
+            background: linear-gradient(135deg, #a5b4fc 60%, #818cf8 100%);
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+        .shape2 {
+            width: 60px; height: 60px; right: 8vw; top: 30vh;
+            background: linear-gradient(135deg, #fca5a5 60%, #f87171 100%);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation-delay: 2s;
+        }
+        .shape3 {
+            width: 100px; height: 100px; left: 10vw; bottom: 8vh;
+            background: linear-gradient(135deg, #6ee7b7 60%, #34d399 100%);
+            border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%;
+            animation-delay: 4s;
+        }
+        @keyframes floatShape {
+            0% { transform: translateY(0) scale(1);}
+            100% { transform: translateY(-30px) scale(1.08);}
+        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            .box {
+                padding: 28px 10px 24px 32px;
+                max-width: 95vw;
+            }
+            .big-quote {
+                font-size: 60px;
+                left: 8px;
+            }
+            .shape1, .shape2, .shape3 {
+                display: none;
+            }
+        }
+        /* Button for more quotes */
+        .more-btn {
+            margin-top: 28px;
+            padding: 10px 28px;
+            background: linear-gradient(90deg, #818cf8 0%, #a5b4fc 100%);
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            font-size: 16px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(31,38,135,0.10);
+            transition: background 0.2s, transform 0.2s;
+            outline: none;
+        }
+        .more-btn:hover {
+            background: linear-gradient(90deg, #a5b4fc 0%, #818cf8 100%);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="box" id="quoteBox">
+        <a href="https://www.w3schools.com/css/css_border.asp" target="_blank">
+            <svg class="big-quote" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="blue" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </a>
+        <p class="quote" id="quoteText">
+            I cannot BELIEVE how simple the software is to use, and how amazing the customer support is.
+        </p>
+        <div class="author" id="quoteAuthor">
+            <br><b>Anshu Regmi</b><br>
+            Just a Happy Soul
+        </div>
+        <button class="more-btn" id="nextQuoteBtn">Show Another Quote</button>
+    </div>
+    <ul class="social-icon"> 
+        <li><a href="https://www.facebook.com/" target="_blank"><img src="images/iconmonstr-facebook-6.svg" alt="Facebook"/></a></li>
+        <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconmonstr-instagram-11.svg" alt="Instagram"/></a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconmonstr-linkedin-3.svg" alt="LinkedIn"/></a></li>
+    </ul>
+    <script>
+        // Animated quote rotator
+        const quotes = [
+            {
+                text: "I cannot BELIEVE how simple the software is to use, and how amazing the customer support is.",
+                author: "<br><b>Anshu Regmi</b><br>Just a Happy Soul"
+            },
+            {
+                text: "Web development is not just about code, it's about creativity and bringing ideas to life.",
+                author: "<br><b>Jane Doe</b><br>Frontend Enthusiast"
+            },
+            {
+                text: "Learning to write programs stretches your mind and helps you think better.",
+                author: "<br><b>Bill Gates</b><br>Microsoft Co-founder"
+            },
+            {
+                text: "The best way to predict the future is to invent it.",
+                author: "<br><b>Alan Kay</b><br>Computer Scientist"
+            }
+        ];
+        let current = 0;
+        const quoteText = document.getElementById('quoteText');
+        const quoteAuthor = document.getElementById('quoteAuthor');
+        const nextBtn = document.getElementById('nextQuoteBtn');
+        nextBtn.addEventListener('click', () => {
+            current = (current + 1) % quotes.length;
+            quoteText.style.opacity = 0;
+            quoteAuthor.style.opacity = 0;
+            setTimeout(() => {
+                quoteText.innerHTML = quotes[current].text;
+                quoteAuthor.innerHTML = quotes[current].author;
+                quoteText.style.opacity = 1;
+                quoteAuthor.style.opacity = 1;
+            }, 350);
+        });
+    </script>
+</body>
+</html>

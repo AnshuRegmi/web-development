@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ID Card</title>
+    <style>
+        body {
+            background: #d3cece;
+            font-family: Arial, sans-serif;
+        }
+        .id-card {
+            width: 400px;
+            height: 220px;
+            background: #fff;
+            border-radius: 16px;
+            display: flex;
+            align-items: stretch;
+            margin: 40px auto;
+        }
+        .id-left {
+            flex: 2;
+            padding: 24px 16px 16px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .id-info {
+            flex: 1;
+        }
+        .id-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .id-faculty {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .id-icons {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .id-icons img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+        .id-right {
+            flex: 1;
+            background: #7094b9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 16px;
+        }
+        .id-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 3px solid #fff;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="id-card">
+        <div class="id-left">
+            <div class="id-info">
+                <div class="id-name">Anshu Regmi</div>
+                <div class="id-faculty">Faculty: BSCS</div>
+            </div>
+            <div class="id-icons">
+                <img src="images/facebook.svg" alt="Facebook">
+                <img src="images/linkedin.svg" alt="LinkedIn">
+            </div>
+        </div>
+        <div class="id-right">
+            <img src="images/pug.jpeg" alt="Profile Photo" class="id-photo">
+        </div>
+    </div>
+</body>
+</html>
