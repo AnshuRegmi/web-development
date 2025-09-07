@@ -1,9 +1,30 @@
 <html>
-    <script>
-        console.log('Hello')
-        let x =50;
-        console.log(x);
-        const y = 10;
-        console.log(y);
-    </script>
+    <script src ="./script.js"></script>
+  <script>
+    console.log("Hello");
+    let x = 50;
+    console.log(x);
+    const y = 10;
+    console.log(y);
+    let a = 5;
+    if (true) {
+      let a = 10;
+      console.log("inside if value of a using let:", a);
+    }
+    console.log("outside if value of a using let:", a);
+    var b = 20;
+    if (true) {
+      var b = 30;
+      console.log("inside if value of b using var:", b);
+    }
+
+    let t = prompt("Enter 1st Number");
+    let s = prompt("Enter 2nd Number");
+    let sum = x + y;
+    console.log("sum", sum);
+
+    if (x < s) {
+      console.log("sum of numbers", x + s);
+    }
+  </script>
 </html>
