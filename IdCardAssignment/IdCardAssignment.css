@@ -1,0 +1,112 @@
+body {
+    background: #f7f4ee;
+    font-family: "Cormorant Garamond", serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.container {
+    width: 420px;
+}
+
+/* FORM */
+.form-card {
+    background: #faf8f3;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #d6cfc4;
+    box-shadow: 0 4px 18px rgba(180, 170, 150, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-title {
+    font-size: 26px;
+    text-align: center;
+    color: #3f3a31;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.form-card label {
+    font-size: 17px;
+    color: #524d45;
+    margin-top: 5px;
+}
+
+.form-card input {
+    padding: 10px;
+    border: 1px solid #c2b8a6;
+    border-radius: 8px;
+    background: #fffdf8;
+    font-size: 15px;
+}
+
+.form-card input:focus {
+    border-color: #9c8f78;
+    outline: none;
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 12px;
+    background: #d0c3a7;
+    border: none;
+    color: #3e362e;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #c3b497;
+}
+
+/* ID CARD */
+.id-card {
+    margin-top: 25px;
+    padding: 25px;
+    background: #faf8f2;
+    border-radius: 16px;
+    border: 1px solid #d8d1c2;
+    box-shadow: 0 4px 18px rgba(160, 150, 130, 0.25);
+    animation: fadeIn 0.5s ease;
+}
+
+.photo-wrap {
+    text-align: center;
+}
+
+.photo-wrap img {
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #c7bda8;
+}
+
+.id-title {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 24px;
+    color: #3c352c;
+    font-weight: 600;
+}
+
+.id-card p {
+    font-size: 18px;
+    color: #403a33;
+    margin: 8px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
